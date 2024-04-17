@@ -1,0 +1,7 @@
+[
+    {
+      "model": "lmstudio-ai/gemma-2b-it-GGU",
+      "api_key": "lm-studio",
+      "base_url": "http://localhost:1234/v1"
+    }
+]
