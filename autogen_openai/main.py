@@ -21,17 +21,15 @@ if __name__ == "__main__":
     # Initialize User Proxy Agent
     user_proxy = UserProxyAgent(
         name="user_proxy",  # Name of the user proxy agent
-        human_input_mode="ALWAYS",  # Set human input mode to always
+        human_input_mode="NEVER",  # Set human input mode to always
         max_consecutive_auto_reply=10,  # Set maximum consecutive auto-reply
         code_execution_config={"work_dir": "coding", "use_docker": False}  # Code execution configuration
     )
 
     # Define tasks for evaluation
     tasks = [
-        '''How do I determine if my study is an applicable clinical trial?''',
-        '''Generate a 500-word essay on the impact of artificial intelligence on society. Measure the time taken to generate the response and the computational resources used.''',
-        '''I ran for three hours at a speed of thirty kilometers per hour, followed by two hours at a speed of twenty kilometers per hour. What is the total distance I covered?'''
+        '''You are a keyword extractor. here is one paper web link 'https://www.digihunch.com/2024/03/public-key-infrastructure-3-of-3-use-cases', please read this page and extract keywords'''
     ]
     
     # Initiate chat between user proxy and assistant agent with one task
-    user_proxy.initiate_chat(agent_assistant, message=tasks[2])
+    user_proxy.initiate_chat(agent_assistant, message=tasks[0])

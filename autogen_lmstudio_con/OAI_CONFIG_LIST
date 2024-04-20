@@ -1,7 +1,12 @@
-[
-    {
-      "model": "lmstudio-ai/gemma-2b-it-GGU",
-      "api_key": "lm-studio",
-      "base_url": "http://localhost:1234/v1"
-    }
+[ 
+  {
+    "model": "lmstudio-community/Meta-Llama-3-8B-Instruct-GGUF",
+    "api_key": "lm-studio",
+    "base_url": "http://localhost:1234/v1"
+  }, 
+  {
+    "model": "llama3",
+    "api_key": "ollama",
+    "base_url": "http://localhost:11434/api/generate"
+  }
 ]

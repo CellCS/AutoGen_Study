@@ -1,2 +1,4 @@
 pyautogen
 autogenstudio
+"uvicorn[standard]"
+fastapi
