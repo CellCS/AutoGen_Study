@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     # Define tasks for evaluation
     tasks = [
-        '''You are a keyword extractor. here is one paper web link 'https://www.digihunch.com/2024/03/public-key-infrastructure-3-of-3-use-cases', please read this page and extract keywords'''
+        '''You are a technical keyword extractor. here is one paper web link 'https://www.digihunch.com/2024/03/public-key-infrastructure-3-of-3-use-cases', please extract keywords'''
     ]
     
     # Initiate chat between user proxy and assistant agent with one task

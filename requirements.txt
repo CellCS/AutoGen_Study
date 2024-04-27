@@ -2,3 +2,7 @@ pyautogen
 autogenstudio
 "uvicorn[standard]"
 fastapi
+ollama
+numpy
+pypdf
+langchain
