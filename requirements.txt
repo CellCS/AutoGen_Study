@@ -6,3 +6,5 @@ ollama
 numpy
 pypdf
 langchain
+langchain-openai
+beautifulsou4
