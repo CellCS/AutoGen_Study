@@ -2,3 +2,4 @@
 .cache
 .DS_Store
 autogen_openai/OAI_CONFIG_LIST
+localkeys/

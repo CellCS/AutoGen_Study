@@ -1,0 +1,26 @@
+version: '3.6'
+
+services:
+  ollama:
+    container_name: ollama
+    image: ollama/ollama:latest
+    ports:
+      - 11434:11434
+    volumes:
+      - ./ollama:/root/.ollama
+    pull_policy: always
+    tty: true
+    restart: unless-stopped
+
+  ollama-webui:
+    container_name: ollama-webui
+    image: ghcr.io/ollama-webui/ollama-webui:main
+    environment:
+      - "OLLAMA_API_BASE_URL=http://ollama:11434/api"
+      - "OPENAI_API_BASE_URLS="https://api.openai.com/v1"
+      - "OPENAI_API_KEYS=VAR_your_OpenAI_Key"
+    ports:
+      - 3000:8080
+    volumes:
+      - ./ollama-webui/data:/app/backend/data
+    restart: unless-stopped

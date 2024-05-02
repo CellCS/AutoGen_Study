@@ -1,0 +1,30 @@
+version: "3.6"
+
+services:
+  ollama-webui:
+    container_name: ollama-webui
+    image: ghcr.io/ollama-webui/ollama-webui:main
+    environment:
+      - "OLLAMA_API_BASE_URL=http://host.docker.internal:11434/api"
+      - "OPENAI_API_BASE_URL=http://litellm-proxy:8000/v1"
+      - "OPENAI_API_KEY=anykey"
+    ports:
+      - 3000:8080
+    volumes:
+      - ./ollama-webui/data:/app/backend/data
+    restart: unless-stopped
+
+  litellm-proxy:
+    container_name: litellm-proxy
+    image: ghcr.io/berriai/litellm:main-latest
+    environment:
+      - "AZURE_API_KEY=VAR_your_AZURE_API_KEY"
+      - "AZURE_API_BASE=VAR_your_AZURE_API_BASE"
+      - "AZURE_API_VERSION=VAR_your_AZURE_API_VERSION"
+    ports:
+      - 4000:8000
+    volumes:
+      - ./litellm/config.yaml:/app/config.yaml
+    command:
+      ["--config", "/app/config.yaml", "--port", "8000", "--detailed_debug"]
+    restart: unless-stopped
