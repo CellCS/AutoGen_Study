@@ -2,7 +2,7 @@ from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
 
 if __name__ == "__main__":
     # Load configuration list from JSON file
-    config_list = config_list_from_json(env_or_file="OAI_CONFIG_LIST")
+    config_list = config_list_from_json(env_or_file="~/Keys/gpts/OpenAI/OAI_CONFIG_LIST")
     
     # Configure Large Language Model (LLM)
     llm_config = {
