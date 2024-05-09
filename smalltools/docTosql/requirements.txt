@@ -1,0 +1,5 @@
+cryptography
+mysql-connector-python
+pandas
+sqlalchemy
+xlrd
